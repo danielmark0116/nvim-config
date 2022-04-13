@@ -25,6 +25,8 @@ nnoremap <leader>w :w<CR>
 " Jump to beginning and end of a line
 nmap <leader>l $
 nmap <leader>h ^
+xmap <leader>l $
+xmap <leader>h ^
 
 " Exit insertmode
 inoremap jk <ESC>
@@ -34,6 +36,9 @@ nmap <C-a> gg<S-v>G
 
 " NERDTree
 nnoremap <leader>e :NERDTreeToggle<CR>
+
+" Run command promt with Vimux in a small horizontal split
+nmap <leader>C :VimuxPromptCommand<CR>
 
 
 " Search for selected text, forwards or backwards.
@@ -62,14 +67,14 @@ nmap <Tab> :tabnext<Return>
 " Windows
 
 " Split window
-" nmap ss :split<Return><C-w>w
-" nmap sv :vsplit<Return><C-w>w
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
 " Move window
 " nmap <Space> <C-w>w
-"map s<left> <C-w>h
-"map s<up> <C-w>k
-"map s<down> <C-w>j
-"map s<right> <C-w>l
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
 "map sh <C-w>h
 "map sk <C-w>k
 "map sj <C-w>j

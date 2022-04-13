@@ -26,6 +26,9 @@ set mouse=a
 
 set guifont=DroidSansMono_Nerd_Font:h11
 
+" Git Blame config
+let g:blamer_enabled = 1
+
 "let loaded_matchparen = 1
 "set shell=fish
 set backupskip=/tmp/*,/private/tmp/*

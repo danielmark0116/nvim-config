@@ -173,6 +173,12 @@ wk.register({
     g = {
       "<cmd>:G<cr>", "Git"
     },
+    j = {
+      name = "Jest",
+      j = {":lua require\"jester\".run()", "Run current (based on cursor position) test"},
+      f = {":lua require\"jester\".run_file()", "Run current test suite file tests"},
+      l = {":lua require\"jester\".run_last()", "Run last test(s)"},
+    },
     f = {
       name = "Files",
       f = { "<cmd>Telescope git_files<cr>", "Find File" },
@@ -219,6 +225,10 @@ require'nvim-treesitter.configs'.setup {
     enable_autocmd = false,
   }
 }
+
+require("jester").setup({
+  cmd = "yarn test -t '$result' -- $file", -- run command
+})
 
 EOF
 

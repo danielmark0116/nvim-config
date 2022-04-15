@@ -32,6 +32,8 @@ if has("nvim")
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/nvim-cmp'
 
+  Plug 'David-Kunz/jester' " Running jest test from within the cursors position
+
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " TS, TreeSitter -> syntax highliighting
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'onsails/lspkind-nvim' " adds vscode-like pictograms to neovim built-in lsp, func, module etc

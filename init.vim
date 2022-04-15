@@ -227,7 +227,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require("jester").setup({
-  cmd = "yarn test -t '$result' $file --coverage=false", -- run command
+  cmd = "yarn test -t '$result' -- $file --coverage=false", -- run command
 })
 
 EOF

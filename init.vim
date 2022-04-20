@@ -29,6 +29,9 @@ set guifont=DroidSansMono_Nerd_Font:h11
 " Git Blame config
 let g:blamer_enabled = 1
 
+" Nvim TEST
+let test#strategy = "vimux"
+
 "let loaded_matchparen = 1
 "set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
@@ -175,9 +178,9 @@ wk.register({
     },
     j = {
       name = "Jest",
-      j = {":lua require\"jester\".run()", "Run current (based on cursor position) test"},
-      f = {":lua require\"jester\".run_file()", "Run current test suite file tests"},
-      l = {":lua require\"jester\".run_last()", "Run last test(s)"},
+      j = {"<cmd>:TestNearest<cr>", "Run current (based on cursor position) test"},
+      f = {"<cmd>:TestFile<cr>", "Run current test suite file tests"},
+      l = {"<cmd>:TestLast<cr>", "Run last test(s)"},
     },
     f = {
       name = "Files",
@@ -226,9 +229,24 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-require("jester").setup({
-  cmd = "yarn test -t '$result' -- $file --coverage=false", -- run command
-})
+EOF
 
+" ELIXIR LS
+lua << EOF
+require'lspconfig'.elixirls.setup{
+  cmd = { "/Users/danielgrychtol/.config/nvim/elixir-ls/language_server.sh" };
+  settings = {
+    elixirLS = {
+      -- I choose to disable dialyzer for personal reasons, but
+      -- I would suggest you also disable it unless you are well
+      -- aquainted with dialzyer and know how to use it.
+      dialyzerEnabled = true,
+      -- I also choose to turn off the auto dep fetching feature.
+      -- It often get's into a weird state that requires deleting
+      -- the .elixir_ls directory and restarting your editor.
+      fetchDeps = false
+    }
+  }
+}
 EOF
 

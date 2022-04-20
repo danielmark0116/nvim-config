@@ -11,7 +11,7 @@ if has("nvim")
   " Coc-nvim 
   " It collides with nvim-lsp autocompletes etc, redundant, enabled only for
   " elixir
-  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install', 'for': ['elixir', 'ex', 'exs']}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install', 'for': ['elixir', 'ex', 'exs']}
 
   Plug 'tpope/vim-surround'
   Plug 'itchyny/vim-cursorword'
@@ -24,6 +24,8 @@ if has("nvim")
   Plug 'kristijanhusak/defx-icons'
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } " File explorer
 
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
   Plug 'neovim/nvim-lspconfig'
   Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' } " gh + gp -> definitoin previews, jumps, etc
   Plug 'folke/lsp-colors.nvim'
@@ -33,6 +35,7 @@ if has("nvim")
   Plug 'hrsh7th/nvim-cmp'
 
   Plug 'David-Kunz/jester' " Running jest test from within the cursors position
+  Plug 'vim-test/vim-test'
 
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " TS, TreeSitter -> syntax highliighting
   Plug 'kyazdani42/nvim-web-devicons'
@@ -46,7 +49,6 @@ if has("nvim")
   Plug 'nvim-lua/completion-nvim'
   Plug 'preservim/nerdtree' " file explorer, sidebar
   Plug 'akinsho/bufferline.nvim'
-  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
   Plug 'folke/which-key.nvim'
   Plug 'dracula/vim', { 'as': 'dracula' },
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -55,7 +57,7 @@ if has("nvim")
   Plug 'preservim/vimux' " Split window to run a command
 
   " Elixir
-  Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
+  " Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
   Plug 'elixir-editors/vim-elixir'
   Plug 'mhinz/vim-mix-format'
   let g:mix_format_on_save = 1

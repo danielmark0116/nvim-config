@@ -11,13 +11,13 @@ if has("nvim")
   " Coc-nvim 
   " It collides with nvim-lsp autocompletes etc, redundant, enabled only for
   " elixir
-  " Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install', 'for': ['elixir', 'ex', 'exs']}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install', 'for': ['javascript', 'javascriptreact']}
 
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
   Plug 'itchyny/vim-cursorword'
   Plug 'hoob3rt/lualine.nvim' " bottom bar styling with modes info etc
   Plug 'jremmen/vim-ripgrep' " :Rg search
-  Plug 'numToStr/Comment.nvim' " Commenting
   Plug 'APZelos/blamer.nvim' " Blame
   Plug 'JoosepAlviste/nvim-ts-context-commentstring' " Additional handling of comments, e.g. in tsx files
   Plug 'kristijanhusak/defx-git'
@@ -27,12 +27,14 @@ if has("nvim")
   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
   Plug 'neovim/nvim-lspconfig'
-  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' } " gh + gp -> definitoin previews, jumps, etc
+  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51'  } " gh + gp -> definitoin previews, jumps, etc
   Plug 'folke/lsp-colors.nvim'
   Plug 'L3MON4D3/LuaSnip' " for snippets?
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
 
   Plug 'David-Kunz/jester' " Running jest test from within the cursors position
   Plug 'vim-test/vim-test'

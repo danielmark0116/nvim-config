@@ -204,23 +204,6 @@ EOF
 
 " COMMETNER
 lua << EOF
-require('Comment').setup{
-  pre_hook = function(ctx)
-    local U = require 'Comment.utils'
-
-    local location = nil
-    if ctx.ctype == U.ctype.block then
-      location = require('ts_context_commentstring.utils').get_cursor_location()
-    elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-      location = require('ts_context_commentstring.utils').get_visual_start_location()
-    end
-
-    return require('ts_context_commentstring.internal').calculate_commentstring {
-      key = ctx.ctype == U.ctype.line and '__default' or '__multiline',
-      location = location,
-    }
-  end,
-}
 
 require'nvim-treesitter.configs'.setup {
   context_commentstring = {
@@ -240,7 +223,7 @@ require'lspconfig'.elixirls.setup{
       -- I choose to disable dialyzer for personal reasons, but
       -- I would suggest you also disable it unless you are well
       -- aquainted with dialzyer and know how to use it.
-      dialyzerEnabled = true,
+      dialyzerEnabled = false,
       -- I also choose to turn off the auto dep fetching feature.
       -- It often get's into a weird state that requires deleting
       -- the .elixir_ls directory and restarting your editor.

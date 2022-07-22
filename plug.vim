@@ -58,6 +58,9 @@ if has("nvim")
   Plug 'ryanoasis/vim-devicons' " Icons
   Plug 'preservim/vimux' " Split window to run a command
 
+  " Styled-components
+  Plug 'styled-components/vim-styled-components'
+
   " Elixir
   " Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
   Plug 'elixir-editors/vim-elixir'

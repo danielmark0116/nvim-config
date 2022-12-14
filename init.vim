@@ -187,6 +187,7 @@ wk.register({
       f = { "<cmd>Telescope git_files<cr>", "Find File" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       n = { "<cmd>enew<cr>", "New File" },
+      e = { "<cmd>:Explore<cr>", "Explore" },
     },
     b = {
       name = "Buffer",

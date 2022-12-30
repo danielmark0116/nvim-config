@@ -54,7 +54,7 @@ if has("nvim")
   Plug 'folke/which-key.nvim'
   Plug 'dracula/vim', { 'as': 'dracula' },
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'ryanoasis/vim-devicons' " Icons
   Plug 'preservim/vimux' " Split window to run a command
 

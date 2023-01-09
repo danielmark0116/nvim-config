@@ -191,12 +191,14 @@ wk.register({
     },
     b = {
       name = "Buffer",
-      j = {"<cmd>:BufferLinePick<cr>", "Jump to buffer"},
-      l = {"<cmd>:BufferLineCycleNext<cr>", "Cycle Next"},
-      h = {"<cmd>:BufferLineCyclePrev<cr>", "Cycle Prev"},
-      H = {"<cmd>:BufferLineCloseLeft<cr>", "Close all to the left"},
-      L = {"<cmd>:BufferLineCloseRight<cr>", "Close all to the right"},
-      c = {"<cmd>:BufferLinePickClose<cr>", "Pick buffer to close"}
+      j = {"<cmd>:BufferPick<cr>", "Jump to buffer"},
+      l = {"<cmd>:BufferNext<cr>", "Cycle Next"},
+      h = {"<cmd>:BufferPrevious<cr>", "Cycle Prev"},
+      H = {"<cmd>:BufferCloseBuffersLeft<cr>", "Close all to the left"},
+      L = {"<cmd>:BufferCloseBuffersRight<cr>", "Close all to the right"},
+      c = {"<cmd>:BufferClose<cr>", "Close current buffer"},
+      a = {"<cmd>:BufferCloseAllButCurrent<cr>", "Close all buffer but the current one"},
+      p = {"<cmd>:BufferPin<cr>", "Pin / unpin buffer"}
     }
 
   },
@@ -233,4 +235,3 @@ require'lspconfig'.elixirls.setup{
   }
 }
 EOF
-

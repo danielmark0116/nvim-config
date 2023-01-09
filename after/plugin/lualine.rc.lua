@@ -3,12 +3,12 @@ if (not status) then return end
 
 vim.opt.termguicolors = true
 
-require("bufferline").setup {
-  options = {
-    tab_size = 34,
-    diagnostics = "nvim_lsp" 
-  }
-}
+-- require("bufferline").setup {
+--   options = {
+--     tab_size = 34,
+--     diagnostics = "nvim_lsp" 
+--   }
+-- }
 
 
 lualine.setup {

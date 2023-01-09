@@ -27,9 +27,9 @@ if has("nvim")
   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
   Plug 'neovim/nvim-lspconfig'
-  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51'  } " gh + gp -> definitoin previews, jumps, etc
+  Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " gh + gp -> definition previews
   Plug 'folke/lsp-colors.nvim'
-  Plug 'L3MON4D3/LuaSnip' " for snippets?
+  Plug 'L3MON4D3/LuaSnip'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/nvim-cmp'
@@ -41,6 +41,8 @@ if has("nvim")
 
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " TS, TreeSitter -> syntax highliighting
   Plug 'kyazdani42/nvim-web-devicons'
+  " Plug 'nvim-tree/nvim-web-devicons'
+  Plug 'romgrk/barbar.nvim'
   Plug 'onsails/lspkind-nvim' " adds vscode-like pictograms to neovim built-in lsp, func, module etc
 
   Plug 'nvim-lua/popup.nvim'
@@ -50,7 +52,7 @@ if has("nvim")
   Plug 'windwp/nvim-autopairs'
   Plug 'nvim-lua/completion-nvim'
   Plug 'preservim/nerdtree' " file explorer, sidebar
-  Plug 'akinsho/bufferline.nvim'
+  " Plug 'akinsho/bufferline.nvim' " replaced with barbar
   Plug 'folke/which-key.nvim'
   Plug 'dracula/vim', { 'as': 'dracula' },
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }

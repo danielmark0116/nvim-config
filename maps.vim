@@ -40,6 +40,10 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 " Run command promt with Vimux in a small horizontal split
 nmap <leader>C :VimuxPromptCommand<CR>
 
+" Lspsaga finder
+nnoremap gh :Lspsaga lsp_finder<CR>
+nnoremap gp :Lspsaga peek_definition<CR>
+
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>

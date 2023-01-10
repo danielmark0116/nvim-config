@@ -196,7 +196,7 @@ wk.register({
       h = {"<cmd>:BufferPrevious<cr>", "Cycle Prev"},
       H = {"<cmd>:BufferCloseBuffersLeft<cr>", "Close all to the left"},
       L = {"<cmd>:BufferCloseBuffersRight<cr>", "Close all to the right"},
-      c = {"<cmd>:BufferClose<cr>", "Close current buffer"},
+      c = {"<cmd>:BufferClose!<cr>", "Close current buffer"},
       a = {"<cmd>:BufferCloseAllButCurrent<cr>", "Close all buffer but the current one"},
       p = {"<cmd>:BufferPin<cr>", "Pin / unpin buffer"}
     }

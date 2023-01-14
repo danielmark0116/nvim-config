@@ -63,6 +63,9 @@ if has("nvim")
   " Styled-components
   Plug 'styled-components/vim-styled-components'
 
+  " easymotion
+  Plug 'easymotion/vim-easymotion'
+
   " Elixir
   " Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
   Plug 'elixir-editors/vim-elixir'

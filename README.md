@@ -21,3 +21,11 @@ If you happen to find yourself in situations when the eslint version changes and
 ```bash
 eslint_d restart
 ```
+
+## Working :Rg with telescope
+
+In order to have the Telescope live_grep working, you need to:
+
+```
+brew install ripgrep
+```

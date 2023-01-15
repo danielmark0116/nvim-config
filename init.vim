@@ -171,10 +171,14 @@ lua << EOF
 
   
 local wk = require("which-key")
+
 wk.register({
   ["<leader>"] = {
     g = {
       "<cmd>:G<cr>", "Git"
+    },
+    m = {
+      "<cmd>:MaximizerToggle<cr>", "Toggle split window maximizer"
     },
     j = {
       name = "Jest",
@@ -186,7 +190,8 @@ wk.register({
       name = "Files",
       f = { "<cmd>Telescope git_files<cr>", "Find File" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-      s = { "<cmd>Telescope live_grep<cr>", "Open Recent File" },
+      s = { "<cmd>Telescope live_grep<cr>", "Search by words" },
+      c = { "<cmd>Telescope grep_string<cr>", "Search by current word under the cursor" },
       n = { "<cmd>enew<cr>", "New File" },
       e = { "<cmd>:Explore<cr>", "Explore" },
     },
@@ -206,7 +211,7 @@ wk.register({
 })
 EOF
 
-" COMMETNER
+" COMMENTER
 lua << EOF
 
 require'nvim-treesitter.configs'.setup {

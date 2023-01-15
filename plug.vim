@@ -66,6 +66,12 @@ if has("nvim")
   " easymotion
   Plug 'easymotion/vim-easymotion'
 
+  " Replace with register
+  Plug 'inkarkat/vim-ReplaceWithRegister'
+
+  " Split windows maximizer
+  Plug 'szw/vim-maximizer'
+
   " Elixir
   " Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
   Plug 'elixir-editors/vim-elixir'

@@ -22,7 +22,13 @@ npm install -g eslint_d
 npm install -g prettier_d_slim
 &&
 npm install -g diagnostic-languageserver
+&&
+npm install -g typescript-language-server
 ```
+
+Dont use node lower than 14
+
+You can use `asdf` or `nvm` to change node ver per session
 
 ---
 

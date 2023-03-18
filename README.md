@@ -10,6 +10,7 @@ Should nicely work with nvim 0.8.2
 2. Install LUA
 3. Install TMUX and copy .tmux.conf to ~/.tmux-conf `cp .tmux.conf ~/.tmux.conf`
   - with tpm: [tpm](https://github.com/tmux-plugins/tpm)
+  - install plugins: [install plugs for tmux](https://github.com/tmux-plugins/tpm#installing-plugins)
 4. Install vim-plug: [vim-plug](https://github.com/junegunn/vim-plug)
 5. Add languages `:TSInstall vim | javascript | typescript etc`
 

@@ -8,7 +8,7 @@ Should nicely work with nvim 0.8.2
 
 1. Install NeoVIM
 2. Install LUA
-3. Install TMUX and copy .tmux.conf to ~/.tmux-conf
+3. Install TMUX and copy .tmux.conf to ~/.tmux-conf `cp .tmux.conf ~/.tmux.conf`
 4. Install vim-plug: [vim-plug](https://github.com/junegunn/vim-plug)
 5. Add languages `:TSInstall vim | javascript | typescript etc`
 

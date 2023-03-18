@@ -20,6 +20,8 @@ If there are issues with the pretteir, make sure you have the eslint_d and prett
 npm install -g eslint_d
 &&
 npm install -g prettier_d_slim
+&&
+npm install -g diagnostic-languageserver
 ```
 
 ---

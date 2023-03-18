@@ -29,12 +29,13 @@ if has("nvim")
   Plug 'neovim/nvim-lspconfig'
   Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " gh + gp -> definition previews
   Plug 'folke/lsp-colors.nvim'
-  Plug 'L3MON4D3/LuaSnip'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'rafamadriz/friendly-snippets'
 
   Plug 'David-Kunz/jester' " Running jest test from within the cursors position
   Plug 'vim-test/vim-test'

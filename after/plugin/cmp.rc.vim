@@ -3,8 +3,12 @@ if !exists('g:loaded_cmp') | finish | endif
 set completeopt=menuone,noinsert,noselect
 
 lua <<EOF
+  require("luasnip.loaders.from_vscode").lazy_load()
   local cmp = require'cmp'
   local lspkind = require'lspkind'
+
+  require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+  require('luasnip').filetype_extend("javascript", { "html" })
 
   cmp.setup({
     snippet = {
@@ -28,6 +32,7 @@ lua <<EOF
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'luasnip' },
     }, {
       { name = 'buffer' },
     }),

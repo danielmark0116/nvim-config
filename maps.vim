@@ -36,6 +36,7 @@ nmap <C-a> gg<S-v>G
 
 " NERDTree
 nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>ef :NERDTreeFind<CR>
 
 " Run command promt with Vimux in a small horizontal split
 nmap <leader>C :VimuxPromptCommand<CR>

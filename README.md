@@ -6,6 +6,10 @@ Should nicely work with nvim 0.8.2
 
 ## Usage
 
+1. Install NeoVIM
+2. Install LUA
+3. Install vim-plug: [vim-plug](https://github.com/junegunn/vim-plug)
+
 If there are issues with the pretteir, make sure you have the eslint_d and prettier_d_slim installed globally with npm (along with prettier and eslint obviously)
 
 ```

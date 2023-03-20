@@ -13,6 +13,11 @@ Should nicely work with nvim 0.8.2
   - install plugins: [install plugs for tmux](https://github.com/tmux-plugins/tpm#installing-plugins)
 4. Install vim-plug: [vim-plug](https://github.com/junegunn/vim-plug)
 5. Add languages `:TSInstall vim | javascript | typescript etc`
+6. Install plugins with :PlugInstall
+7. Afterwards, overwrite `.local/share/nvim/plugged/lspsaga` with the ZIP fromthis commit: [lspsaga](https://github.com/glepnir/lspsaga.nvim/commit/b7b4777369b441341b2dcd45c738ea4167c11c9e)
+  - just downlaod archive's ZIP instead of `git clone`, unzip and copy `cp -r lspsaga ~/.local.../lspsaga.nvim`
+  - new version has breaking changes and it is not yet addresed in this config :C
+
 
 If there are issues with the pretteir, make sure you have the eslint_d and prettier_d_slim installed globally with npm (along with prettier and eslint obviously)
 

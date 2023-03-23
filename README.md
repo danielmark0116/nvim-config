@@ -35,6 +35,8 @@ Dont use node lower than 14
 
 You can use `asdf` or `nvm` to change node ver per session
 
+Setup has issues with prettier version higher than 1.19.1
+
 ---
 
 If you happen to find yourself in situations when the eslint version changes and the lsp + eslint_d seem not to work correctly, you can try restarting the setup with:

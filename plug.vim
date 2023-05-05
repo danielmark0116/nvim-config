@@ -28,6 +28,9 @@ if has("nvim")
 
   Plug 'neovim/nvim-lspconfig'
   Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " gh + gp -> definition previews
+  " Using old branch as the new version had breaking changes, did not manage
+  " to address it yet in my config
+  "Plug 'https://github.com/glepnir/lspsaga.nvim/tree/e844575150d906e64fe9abfac864a5b12f5abe19'
   Plug 'folke/lsp-colors.nvim'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
@@ -37,7 +40,8 @@ if has("nvim")
   Plug 'L3MON4D3/LuaSnip'
   Plug 'rafamadriz/friendly-snippets'
 
-  Plug 'David-Kunz/jester' " Running jest test from within the cursors position
+  " Plug 'David-Kunz/jester' " Running jest test from within the cursors position
+  Plug 'mattkubej/jest.nvim'
   Plug 'vim-test/vim-test'
 
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " TS, TreeSitter -> syntax highliighting
@@ -83,8 +87,7 @@ endif
 
 let NERDTreeShowHidden=1
 let g:prettier#autoformat_config_present = 1
-let g:prettier#exec_cmd_path = "/Users/danielgrychtol/.nvm/versions/node/v14.11.0/bin/prettier"
-let g:prettier#autoformat_config_present = 1
+" let g:prettier#exec_cmd_path = "/Users/danielgrychtol/.nvm/versions/node/v14.11.0/bin/prettier"
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }

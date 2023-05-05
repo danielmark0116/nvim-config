@@ -182,9 +182,9 @@ wk.register({
     },
     j = {
       name = "Jest",
-      j = {"<cmd>:TestNearest<cr>", "Run current (based on cursor position) test"},
-      f = {"<cmd>:TestFile<cr>", "Run current test suite file tests"},
-      l = {"<cmd>:TestLast<cr>", "Run last test(s)"},
+      j = {"<cmd>:JestSingle<cr>", "Run current (based on cursor position) test"},
+      f = {"<cmd>:JestFile<cr>", "Run current test suite file tests"},
+      -- l = {"<cmd>:TestLast<cr>", "Run last test(s)"},
     },
     f = {
       name = "Files",
@@ -239,5 +239,18 @@ require'lspconfig'.elixirls.setup{
       fetchDeps = false
     }
   }
+}
+EOF
+
+" ELIXIR LS
+lua << EOF
+require'nvim-jest'.setup {
+  -- Jest executable
+  -- By default finds jest in the relative project directory
+  -- To override with an npm script, provide 'npm test --' or similar
+  jest_cmd = 'npm run jest --',
+
+  -- Prevents tests from printing messages
+  silent = false,
 }
 EOF

@@ -52,3 +52,8 @@ In order to have the Telescope live_grep working, you need to:
 ```
 brew install ripgrep
 ```
+
+## Elixir
+
+Use this guide: 
+https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls

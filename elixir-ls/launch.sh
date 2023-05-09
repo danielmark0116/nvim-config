@@ -41,7 +41,7 @@ fi
 # give them the chance here. ELS_MODE will be set for
 # the really complex stuff. Use an XDG compliant path.
 
-els_setup="${XDG_CONFIG_HOME:-~/.config}/elixir_ls/setup.sh"
+els_setup="${XDG_CONFIG_HOME:-$HOME/.config}/elixir_ls/setup.sh"
 if test -f "${els_setup}"
 then
   .  "${els_setup}"
@@ -70,4 +70,4 @@ fi
 
 export ERL_LIBS="$SCRIPTPATH:$ERL_LIBS"
 
-exec elixir --erl "+sbwt none +sbwtdcpu none +sbwtdio none"  -e "$ELS_SCRIPT"
+exec elixir --erl "+sbwt none +sbwtdcpu none +sbwtdio none" -e "$ELS_SCRIPT"

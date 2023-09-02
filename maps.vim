@@ -90,3 +90,8 @@ map sl <C-w>l
 "nmap <C-w><up> <C-w>+
 "nmap <C-w><down> <C-w>-
 
+" Copilot
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+imap  <C-K> <Plug>(copilot-next)
+imap  <C-D> <Plug>(copilot-dismiss)
+let g:copilot_no_tab_map = v:true

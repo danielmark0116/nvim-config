@@ -160,6 +160,8 @@ set exrc
 " vim: set foldmethod=marker foldlevel=0:
 "
 "
+
+
 " WHICH KEY
 
 lua << EOF
@@ -194,6 +196,8 @@ wk.register({
       c = { "<cmd>Telescope grep_string<cr>", "Search by current word under the cursor" },
       n = { "<cmd>enew<cr>", "New File" },
       e = { "<cmd>:Explore<cr>", "Explore" },
+      t = { "<cmd>:TodoTelescope<cr>", "Todo telescope" },
+      l = { "<cmd>:TodoLocList<cr>", "Todo list" },
     },
     b = {
       name = "Buffer",
@@ -205,8 +209,23 @@ wk.register({
       c = {"<cmd>:BufferClose!<cr>", "Close current buffer"},
       a = {"<cmd>:BufferCloseAllButCurrent<cr>", "Close all buffer but the current one"},
       p = {"<cmd>:BufferPin<cr>", "Pin / unpin buffer"}
-    }
-
+    },
+    c = {
+      name = "ChatGPT",
+        c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
+        e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
+        g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
+        t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
+        k = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
+        d = { "<cmd>ChatGPTRun docstring<CR>", "Docstring", mode = { "n", "v" } },
+        a = { "<cmd>ChatGPTRun add_tests<CR>", "Add Tests", mode = { "n", "v" } },
+        o = { "<cmd>ChatGPTRun optimize_code<CR>", "Optimize Code", mode = { "n", "v" } },
+        s = { "<cmd>ChatGPTRun summarize<CR>", "Summarize", mode = { "n", "v" } },
+        f = { "<cmd>ChatGPTRun fix_bugs<CR>", "Fix Bugs", mode = { "n", "v" } },
+        x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
+        r = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
+        l = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
+      },
   },
 })
 EOF
@@ -242,6 +261,11 @@ require'lspconfig'.elixirls.setup{
 }
 EOF
 
+" Chat GPT
+lua << EOF
+require'chatgpt'.setup{}
+EOF
+
 " ELIXIR LS
 lua << EOF
 require'nvim-jest'.setup {
@@ -254,3 +278,13 @@ require'nvim-jest'.setup {
   silent = false,
 }
 EOF
+
+" TODO comments
+lua << EOF
+  require("todo-comments").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
+

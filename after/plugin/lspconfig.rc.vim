@@ -10,6 +10,24 @@ lua << EOF
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
 
+function exec(command)
+  local f = io.popen(command)
+  local l = f:read("*a")
+
+  f:close()
+
+  return l
+end
+
+function file_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
+local git_dir = exec("git rev-parse --show-toplevel")
+git_dir = string.gsub(git_dir, "\n", "")
+
+
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -44,6 +62,26 @@ local on_attach = function(client, bufnr)
   -- formatting
   if client.name == 'tsserver' then
     client.server_capabilities.document_formatting = false
+  end
+
+  -- -- For deno
+  if file_exists(git_dir .. "/supabase/deno.json") or file_exists(git_dir .. "/supabase/functions/import_map.json") or file_exists(git_dir .. "/deno.json") or file_exists(git_dir .. "/apps/supabase/deno.json") then
+    local curr_buffer_path = vim.fn.expand('%:p')
+    local is_supabase_buffer = string.match(curr_buffer_path, "supabase/functions")
+
+    if client.name == "tsserver" and is_supabase_buffer then
+        client.stop()
+        return
+    end
+
+    -- -- For deno VS tsserver
+    -- if file_exists(git_dir .. "/package.json")  then
+    --   if client.name == "denols" then
+    --       client.stop()
+    --       return
+    --   end
+    -- end
+
   end
 
   if client.server_capabilities.document_formatting then
@@ -100,6 +138,16 @@ nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
   capabilities = capabilities,
+  -- root_dir = nvim_lsp.util.root_pattern("package.json"),
+  -- single_file_support = false
+}
+
+nvim_lsp.denols.setup{
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "import_map.json"),
+  init_options = {
+    lint = true,
+  },
 }
 
 nvim_lsp.diagnosticls.setup {
@@ -111,7 +159,7 @@ nvim_lsp.diagnosticls.setup {
         command = 'eslint_d',
         rootPatterns = { '.git' },
         debounce = 100,
-        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json', '--no-warn-ignored' },
         sourceName = 'eslint_d',
         parseJson = {
           errorsRoot = '[0].messages',

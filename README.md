@@ -29,6 +29,8 @@ npm install -g prettier_d_slim
 npm install -g diagnostic-languageserver
 &&
 npm install -g typescript-language-server
+&&
+brew install deno
 ```
 
 Dont use node lower than 14

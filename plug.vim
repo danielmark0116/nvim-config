@@ -12,6 +12,12 @@ if has("nvim")
   " It collides with nvim-lsp autocompletes etc, redundant, enabled only for
   " elixir
   " Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install', 'for': ['javascript', 'javascriptreact']}
+  " Copilot
+  Plug 'github/copilot.vim'
+  " ChatGPT plug
+  Plug 'jackMort/ChatGPT.nvim'
+  " NUI is needed for ChatGPT
+  Plug 'MunifTanjim/nui.nvim'
 
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
@@ -27,7 +33,8 @@ if has("nvim")
   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
   Plug 'neovim/nvim-lspconfig'
-  Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " gh + gp -> definition previews
+  " gh + gp -> definition previews
+  Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } 
   " Using old branch as the new version had breaking changes, did not manage
   " to address it yet in my config
   "Plug 'https://github.com/glepnir/lspsaga.nvim/tree/e844575150d906e64fe9abfac864a5b12f5abe19'
@@ -41,6 +48,7 @@ if has("nvim")
   Plug 'rafamadriz/friendly-snippets'
 
   " Plug 'David-Kunz/jester' " Running jest test from within the cursors position
+  " Choose one, and delete one remaining TODO!
   Plug 'mattkubej/jest.nvim'
   Plug 'vim-test/vim-test'
 
@@ -76,6 +84,9 @@ if has("nvim")
 
   " Split windows maximizer
   Plug 'szw/vim-maximizer'
+
+  " TODO comments
+  Plug 'folke/todo-comments.nvim'
 
   " Elixir
   " Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}

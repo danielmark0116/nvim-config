@@ -73,6 +73,9 @@ if has("nvim")
   Plug 'ryanoasis/vim-devicons' " Icons
   Plug 'preservim/vimux' " Split window to run a command
 
+  " ALE for eslint and prettier
+  Plug 'dense-analysis/ale'
+
   " Styled-components
   Plug 'styled-components/vim-styled-components'
 

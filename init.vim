@@ -263,7 +263,11 @@ EOF
 
 " Chat GPT
 lua << EOF
-require'chatgpt'.setup{}
+require'chatgpt'.setup{
+   openai_params = {
+        model = "gpt-4",
+   }
+}
 EOF
 
 " ELIXIR LS
@@ -288,3 +292,21 @@ lua << EOF
   }
 EOF
 
+
+" ALE
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'typescript': ['eslint'],
+\   'typescriptreact': ['eslint'],
+\   'tsx': ['eslint'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\   'javascriptreact': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'eslint'],
+\   'typescriptreact': ['prettier', 'eslint'],
+\   'tsx': ['prettier', 'eslint'],
+\}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1

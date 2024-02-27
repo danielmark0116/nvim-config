@@ -67,10 +67,13 @@ local on_attach = function(client, bufnr)
   -- -- For deno
   if file_exists(git_dir .. "/supabase/deno.json") or file_exists(git_dir .. "/supabase/functions/import_map.json") or file_exists(git_dir .. "/deno.json") or file_exists(git_dir .. "/apps/supabase/deno.json") then
     local curr_buffer_path = vim.fn.expand('%:p')
-    local is_supabase_buffer = string.match(curr_buffer_path, "supabase/functions")
+    -- local is_supabase_buffer = string.match(curr_buffer_path, "supabase/functions")
+    local is_supabase_buffer = string.match(curr_buffer_path, "supabase/")
 
     if client.name == "tsserver" and is_supabase_buffer then
         client.stop()
+        -- vim.b.ale_linters = { "deno" }
+        -- vim.b.ale_fixers = { "deno" }
         return
     end
 
@@ -142,6 +145,14 @@ nvim_lsp.tsserver.setup {
   -- single_file_support = false
 }
 
+nvim_lsp.solargraph.setup {
+  -- on_attach = on_attach,
+  -- capabilities = capabilities,
+  -- root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git"),
+  -- filetypes = { "ruby" },
+  -- single_file_support = true
+}
+
 nvim_lsp.denols.setup{
   on_attach = on_attach,
   root_dir = nvim_lsp.util.root_pattern("deno.json", "import_map.json"),
@@ -210,6 +221,25 @@ nvim_lsp.diagnosticls.setup {
     }
   }
 }
+
+-- For autoformat for ruby with rubocop !
+-- vim.opt.signcolumn = "yes"
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "ruby",
+--   callback = function()
+--     vim.lsp.start {
+--       name = "rubocop",
+--       cmd = { "bundle", "exec", "rubocop", "--lsp" },
+--     }
+--   end,
+-- })
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "ruby",
+--   callback = function()
+--     vim.lsp.buf.format()
+--   end,
+-- })
+-- end rubocop
 
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

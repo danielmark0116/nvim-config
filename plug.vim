@@ -13,7 +13,7 @@ if has("nvim")
   " elixir
   " Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install', 'for': ['javascript', 'javascriptreact']}
   " Copilot
-  Plug 'github/copilot.vim', { 'tag': 'v1.12.0' }
+  Plug 'github/copilot.vim', { 'tag': 'v1.14.0' }
   " ChatGPT plug
   Plug 'jackMort/ChatGPT.nvim'
   " NUI is needed for ChatGPT

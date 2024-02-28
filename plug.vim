@@ -34,7 +34,7 @@ if has("nvim")
 
   Plug 'neovim/nvim-lspconfig'
   " gh + gp -> definition previews
-  Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } 
+  Plug 'glepnir/lspsaga.nvim', { 'commit': 'b7b4777369b441341b2dcd45c738ea4167c11c9e' } 
   " Using old branch as the new version had breaking changes, did not manage
   " to address it yet in my config
   "Plug 'https://github.com/glepnir/lspsaga.nvim/tree/e844575150d906e64fe9abfac864a5b12f5abe19'

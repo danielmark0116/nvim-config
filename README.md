@@ -55,6 +55,12 @@ In order to have the Telescope live_grep working, you need to:
 brew install ripgrep
 ```
 
+## Possible issues
+
+Defx might have issues with python3 not visible, try running this in such a case:
+
+python3 -m pip install --user --upgrade pynvim
+
 ## Elixir
 
 Use this guide: 

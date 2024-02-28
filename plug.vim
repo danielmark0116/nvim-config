@@ -13,7 +13,7 @@ if has("nvim")
   " elixir
   " Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install', 'for': ['javascript', 'javascriptreact']}
   " Copilot
-  Plug 'github/copilot.vim'
+  Plug 'github/copilot.vim', { 'tag': 'v1.12.0' }
   " ChatGPT plug
   Plug 'jackMort/ChatGPT.nvim'
   " NUI is needed for ChatGPT
@@ -25,10 +25,10 @@ if has("nvim")
   Plug 'hoob3rt/lualine.nvim' " bottom bar styling with modes info etc
   Plug 'jremmen/vim-ripgrep' " :Rg search
   Plug 'APZelos/blamer.nvim' " Blame
-  Plug 'JoosepAlviste/nvim-ts-context-commentstring' " Additional handling of comments, e.g. in tsx files
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring', { 'branch': 'fix-top-level-jsx-commenting' } " Additional handling of comments, e.g. in tsx files
   Plug 'kristijanhusak/defx-git'
   Plug 'kristijanhusak/defx-icons'
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } " File explorer
+  Plug 'Shougo/defx.nvim', { 'tag': '1.5', 'do': ':UpdateRemotePlugins' } " File explorer
 
   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
@@ -52,21 +52,21 @@ if has("nvim")
   Plug 'mattkubej/jest.nvim'
   Plug 'vim-test/vim-test'
 
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " TS, TreeSitter -> syntax highliighting
+  Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.8.5', 'do': ':TSUpdate' } " TS, TreeSitter -> syntax highliighting
   Plug 'kyazdani42/nvim-web-devicons'
   " Plug 'nvim-tree/nvim-web-devicons'
-  Plug 'romgrk/barbar.nvim'
+  Plug 'romgrk/barbar.nvim', { 'tag': 'v1.4.1' }
   Plug 'onsails/lspkind-nvim' " adds vscode-like pictograms to neovim built-in lsp, func, module etc
 
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
 
-  Plug 'nvim-telescope/telescope.nvim' " search <leader> ff
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' } " search <leader> ff
   Plug 'windwp/nvim-autopairs'
   Plug 'nvim-lua/completion-nvim'
-  Plug 'preservim/nerdtree' " file explorer, sidebar
+  Plug 'preservim/nerdtree', { 'tag': '6.10.16' } " file explorer, sidebar
   " Plug 'akinsho/bufferline.nvim' " replaced with barbar
-  Plug 'folke/which-key.nvim'
+  Plug 'folke/which-key.nvim', { 'tag': 'v1.4.0' }
   Plug 'dracula/vim', { 'as': 'dracula' },
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
